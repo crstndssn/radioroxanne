@@ -5,7 +5,7 @@ import Product from '../components/Product'
 export default class Products extends Component {
     render() {
         return (
-            <div className="grid grid-cols-4 gap-5 mt-7">
+            <div className="grid grid-cols-3 gap-5 mt-7">
                 <Product />
                 <Product />
                 <Product />

@@ -14,10 +14,10 @@ import NavbarUser from '../components/NavbarUser'
 export default class User extends Component {
     render() {
         return (
-            <div className="flex justify-center items-start mt-8">
+            <div className="flex justify-center items-start flex-col mt-8">
                 <Porfile />
                 <Router>
-                    <div className="w-3/4 pl-12 flex justify-center items-start flex-col">
+                    <div className="w-full pl-12 flex justify-center items-start flex-col">
                         <NavbarUser />
                         <Route path="/add-post" component={AddPosts} />
                         <Route path="/add-product" component={AddProduct} />
