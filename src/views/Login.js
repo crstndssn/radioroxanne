@@ -9,10 +9,10 @@ export default class Login extends Component {
         return (
             <div className="w-full min-h-80 flex justify-center items-center">
                 <div className="w-1/3">
-                    <h1 className="text-6xl my-5">Ingresa</h1>
-                    <Link to="/user" className="flex justify-center items-center text-2xl border-2 border-black p-4 my-3">
+                    <h1 className="text-5xl font-serif my-5"><i>Conéctate</i></h1>
+                    <Link to="/user" className="flex justify-center items-center rounded font-serif text-2xl border-2 border-black p-3 my-3">
                         <img className="w-6 mx-2" src={google} alt="google" />Google</Link>
-                    <Link to="/user" className="flex justify-center items-center text-2xl bg-blue-900 text-white p-4 my-3">
+                    <Link to="/user" className="flex justify-center items-center rounded font-serif text-2xl bg-blue-900 text-white p-3 my-3">
                         <img className="w-7 mx-2" src={facebook} alt="google" />Facebook</Link>
                         <p className="text-lg my-5">No tienes una cuenta?  <Link className="underline text-lg" to="/signup">Registrate</Link></p>
                 </div>

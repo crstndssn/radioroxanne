@@ -164,9 +164,9 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        'Chivo',
+        'Be Vietnam',
       ],
-      serif: ['Be Vietnam'],
+      serif: ['Chivo'],
       mono: [
         'ui-monospace',
         'SFMono-Regular',
