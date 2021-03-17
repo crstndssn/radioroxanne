@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
+import { Link } from 'react-router-dom'
+
 export default class AddPost extends Component {
     render() {
         return (
-            <div className="bg-gray-100 rounded shadow flex justify-center items-center cursor-pointer">
-                <p className="text-xl text-gray-500">+ Add Posts</p>
-            </div>
+            <Link to="/add-post">
+                <div className="w-full h-32 flex justify-center items-center border border-gray-200 shadow hover:shadow-md rounded-lg cursor-pointer">
+                    <p className="text-2xl text-gray-800 font-medium">Crear Post</p>
+                </div>
+            </Link>
         )
     }
 }

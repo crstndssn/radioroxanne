@@ -12,6 +12,8 @@ import Blog from './views/Blog'
 import Login from './views/Login'
 import Signup from './views/Signup'
 import User from './views/User'
+import AddProduct from './views/AddProduct'
+import AddPost from './views/AddPost'
 
 export default class App extends Component {
   render() {
@@ -30,7 +32,9 @@ export default class App extends Component {
 
           <Route path="/login" component={Login} />
           <Route path="/signup" component={Signup} />
-
+          
+          <Route path="/crear-producto" component={AddProduct} />
+          <Route path="/crear-post" component={AddPost} />
 
         </Router>
       </div>

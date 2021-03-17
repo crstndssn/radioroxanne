@@ -1,43 +1,42 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Porfile from '../components/Porfile'
-import AddPost from '../components/AddPost'
-import AddProduct from './AddProduct'
-import Configuration from '../components/Configuration'
 
+import Tools from './Tools'
 import MyPosts from './MyPosts'
 import MyProducts from './MyProducts'
 
 
-import NavbarUser from '../components/NavbarUser'
 
 export default class User extends Component {
     render() {
         return (
-            <div className="flex justify-center items-start">
+            <div className="flex justify-center items-start flex-col">
 
-                <div className="w-1/4">
-                    <Porfile />    
+                <div className="w-full">
+                    <Porfile />
                 </div>
 
 
-                <Router>
+                <div className="w-full flex justify-center items-start flex-col">
 
-                    <div className="w-3/4 pl-12 flex justify-center items-start flex-col">
-                        <NavbarUser />
-
-                        <Route path="/user/products" component={MyProducts} />                       
-                        <Route path="/user/posts" component={MyPosts} />                       
-
-
-                        <Route path="/add-post" component={AddPost} />
-                        <Route path="/add-product" component={AddProduct} />
-                        <Route path="/configuracion" component={Configuration} />
-
+                    <div className="w-full my-5">
+                        <h1 className="mb-5 text-3xl font-medium">Herramientas</h1>
+                        <Tools />
                     </div>
 
-                </Router>
+                    <div className="w-full my-5">
+                        <h1 className="mb-5 text-3xl font-medium">Mis productos</h1>
+                        <MyProducts />
+                    </div>
+
+                    <div className="w-full my-5">
+                        <h2 className="mb-5 text-3xl font-medium">Mis posts</h2>
+                        <MyPosts />
+                    </div>
+
+                </div>
+
 
             </div>
         )

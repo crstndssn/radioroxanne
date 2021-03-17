@@ -13,14 +13,14 @@ import photo from '../resources/artist.png'
 export default class Porfile extends Component {
     render() {
         return (
-            <div className="w-full flex justify-center items-start">
-                <div className="flex justify-center items-start flex-col mb-3">
-                    <div className="w-full">
+            <div className="w-full flex justify-center items-start mt-5">
+                <div className="w-3/5 flex justify-center items-center mb-3">
+                    <div className="w-1/2">
                         <img src={photo} alt="user" className="mb-5 rounded" />
                     </div>
-                    <div className="w-full flex justify-center items-start flex-col">
+                    <div className="w-1/2 flex justify-center items-start flex-col ml-6">
                         <div className="flex items-center">
-                           <h1 className="text-4xl font-semibold font-serif">Name aaaa</h1> 
+                           <h1 className="text-4xl font-medium">Name aaaa</h1> 
                         </div>
                         <p className="text-xl my-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                         <Link to="/user/edit" className="p-1 mt-2 border border-black rounded">Editar perfil</Link>
