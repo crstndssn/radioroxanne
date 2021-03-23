@@ -5,7 +5,7 @@ import Products from '../layouts/Products'
 export default class Store extends Component {
     render() {
         return (
-            <div>
+            <div className="container mx-auto">
                 <Products />
             </div>
         )

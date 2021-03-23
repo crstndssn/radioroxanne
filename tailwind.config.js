@@ -6,6 +6,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
+      xs: '320px',
       sm: '640px',
       md: '768px',
       lg: '1024px',
@@ -13,6 +14,12 @@ module.exports = {
       '2xl': '1536px',
     },
     colors: {
+
+      paper: '#F2F0E9',
+      orange: '#E1962A',
+      nature: '#2B4A45',
+      sky: '#455D84',
+
       transparent: 'transparent',
       current: 'currentColor',
 
@@ -448,6 +455,7 @@ module.exports = {
       ...breakpoints(theme('screens')),
     }),
     minHeight: {
+      10: '10vh',
       20: '20vh',
       30: '30vh',
       40: '40vh',

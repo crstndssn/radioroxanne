@@ -4,7 +4,7 @@ import Posts from '../layouts/Posts'
 export default class Blog extends Component {
     render() {
         return (
-            <div>
+            <div className="container mx-auto">
                 <Posts/>
             </div>
         )

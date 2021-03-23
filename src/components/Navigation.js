@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 export default class Navigation extends Component {
     render() {
         return (
-            <div className="flex justify-between items-center py-7">
+            <div className="container mx-auto flex justify-between items-center py-7 absolute top-0 left-0 right-0 bg-transparent w-full">
                 <div className="w-1/5 justify-start items-end">
-                    <Link to="/" className="logo text-3xl font-serif font-medium tracking-tight">Radio<br/>Roxanne</Link>
+                    <Link to="/" className="logo text-3xl font-medium tracking-tight"><span className="font-serif">Radio</span><br/><span className="font-serif font-bold">Roxanne</span></Link>
                 </div>
                 <div className="w-3/5 flex justify-center items-center">
                     <Link to="/artistas" className="text-xl font-medium font-serif tracking-tight mx-7">artistas</Link>

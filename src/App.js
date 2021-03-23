@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Components
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 
 // Views
 import Home from './views/Home'
@@ -18,10 +19,13 @@ import AddPost from './views/AddPost'
 export default class App extends Component {
   render() {
     return (
-      <div className="container mx-auto">
+      <div className="bg-paper min-h-screen">
         <Router>
 
-          <Navigation />
+          <div className="min-h-10 mb-5">
+            <Navigation />
+          </div>
+          
 
           <Route exact path="/" component={Home} />
           <Route path="/artistas" component={Artistas} />
@@ -35,6 +39,10 @@ export default class App extends Component {
           
           <Route path="/crear-producto" component={AddProduct} />
           <Route path="/crear-post" component={AddPost} />
+          
+          <div>
+            <Footer/>
+          </div>
 
         </Router>
       </div>
