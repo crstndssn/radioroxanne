@@ -16,10 +16,19 @@ const Navigation = () => {
         })
     })
 
+    const logout = () => {
+        auth.signOut()
+        setUsuario(null)
+        history.push('/')
+    }
+
     return (
         <div className="container mx-auto flex justify-between items-center py-7 absolute top-0 left-0 right-0 bg-transparent w-full">
             <div className="w-1/5 justify-start items-end">
-                <Link to="/" className="logo text-3xl font-medium tracking-tight"><span className="font-serif">Radio</span><br /><span className="font-serif font-bold">Roxanne</span></Link>
+                <Link to="/" className="logo text-3xl font-medium tracking-tight">
+                    <span className="font-serif">Radio</span><br/>
+                    <span className="font-serif font-bold">Roxanne</span>
+                </Link>
             </div>
             <div className="w-3/5 flex justify-center items-center">
                 <Link to="/artistas" className="text-xl font-medium font-serif tracking-tight mx-7">artistas</Link>
@@ -30,7 +39,8 @@ const Navigation = () => {
                 usuario ?
                     (
                         <div className="w-1/5 flex justify-end items-center">
-                            <Link to="/me" className="text-xl text-white bg-black py-1 px-2 font-serif rounded font-medium tracking-tight">mi perfil</Link>
+                            <button onClick={logout} className="text-xl text-black bg-transparent border border-black mx-2 py-1 px-2 font-serif rounded font-medium tracking-tight">logout</button>
+                            <Link to="/user" className="text-xl text-white bg-black py-1 px-2 font-serif rounded font-medium tracking-tight">mi perfil</Link>
                         </div>
                     )
                     :

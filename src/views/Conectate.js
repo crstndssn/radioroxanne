@@ -1,22 +1,49 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { auth, googleProvider  } from '../firebase'
+import { auth, googleProvider, store } from '../firebase'
 
 import google from '../resources/google.svg'
 import facebook from '../resources/facebook.svg'
 
 const Login = () => {
 
+    const [id, setId] = useState('');
+    const [email, setEmail] = useState('');
+
     const loginGoogle = async e => {
         e.preventDefault();
         await auth
-                .signInWithPopup(googleProvider)
-                .then(result => {
-                    console.log(result)
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+            .signInWithPopup(googleProvider)
+            .then(result => {
+                console.log(result.user.uid)
+                setId(result.user.uid)
+                setEmail(result.user.email)
+                console.log(`el id: ${result.user.uid}`)
+                console.log(`el email: ${email}`)
+                createUser(result.user.uid, result.user.email)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    const createUser = async (id, email) => {
+
+        const artist = {
+            id: id,
+            email: email,
+            name: 'Tu nombre',
+            description: 'Una breve descripcion',
+            link: 'Un link para ver mas'
+        }
+
+        try {
+            const data = await store.collection('artists').doc(artist.id).set(artist)
+            console.log('add-user')
+            console.log(data)
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     return (
