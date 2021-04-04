@@ -10,8 +10,7 @@ import Home from './views/Home'
 import Artistas from './views/Artistas'
 import Store from './views/Store'
 import Blog from './views/Blog'
-import Login from './views/Login'
-import Signup from './views/Signup'
+import Conectate from './views/Conectate'
 import User from './views/User'
 import AddProduct from './views/AddProduct'
 import AddPost from './views/AddPost'
@@ -34,8 +33,7 @@ export default class App extends Component {
 
           <Route path="/user" component={User} />
 
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
+          <Route path="/conectate" component={Conectate} />
           
           <Route path="/crear-producto" component={AddProduct} />
           <Route path="/crear-post" component={AddPost} />
