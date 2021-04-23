@@ -25,10 +25,10 @@ export default class User extends Component {
                         <Tools />
                     </div>
 
-                    <div className="w-full my-5">
+                    {/* <div className="w-full my-5">
                         <h1 className="mb-5 text-3xl font-medium">Mis productos</h1>
                         <MyProducts />
-                    </div>
+                    </div> */}
 
                     <div className="w-full my-5">
                         <h2 className="mb-5 text-3xl font-medium">Mis posts</h2>

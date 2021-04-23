@@ -24,7 +24,6 @@ export default class App extends Component {
           <div className="min-h-10 mb-5">
             <Navigation />
           </div>
-          
 
           <Route exact path="/" component={Home} />
           <Route path="/artistas" component={Artistas} />

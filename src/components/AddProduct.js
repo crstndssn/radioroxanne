@@ -5,8 +5,9 @@ export default class AddProduct extends Component {
     render() {
         return (
             <Link to="/crear-producto">
-                <div className="w-full h-32 border border-gray-200 flex justify-center items-center shadow hover:shadow-md rounded-lg cursor-pointer">
-                    <p className="text-2xl text-gray-800 font-medium">Subir un producto</p>
+                <div className="w-full h-32 bg-gray-300 flex justify-center items-center flex-col shadow rounded cursor-pointer">
+                    <p className="text-2xl text-gray-500">Crear Merch</p>
+                    <p className="text-lg text-gray-500">(Próximamente)</p>
                 </div>
             </Link>
         )

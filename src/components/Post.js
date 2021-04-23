@@ -5,7 +5,7 @@ import post from '../resources/post.png'
 export default class Post extends Component {
     render() {
         return (
-            <div className="flex justify-center items-center border border-gray-200 shadow hover:shadow-md rounded-lg">
+            <div className="flex justify-center items-center bg-white shadow hover:shadow-md rounded-lg">
                 <div className="w-1/2">
                    <img src={post} alt="Post" className="rounded-l-lg" /> 
                 </div>

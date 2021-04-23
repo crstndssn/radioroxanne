@@ -13,41 +13,40 @@ const Porfile = () => {
     const [description, setDescription] = useState('')
     const [link, setLink] = useState('')
 
-    useEffect(async ()  => {
-        
+    useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 setIdUser(user.uid)
-                console.log(user.uid)
-            }
-            else {
-                console.log('23-conectate')
+                console.log(user)
             }
         })
-        const getPorfile = async () => {
-            
-            await store.collection('artists').where('id', '==', idUser)
-                .get()
-                .then((querySnapshot) => {
-                    console.log(querySnapshot)
-                    querySnapshot.forEach((doc) => {
-                        console.log(doc.data())
-                        debugger
-                        setName(doc.data().name)
-                        setDescription(doc.data().description)
-                        setLink(doc.data().link)
-                    });
-                })
-                .catch((error) => {
-                    console.log("Error getting documents: ", error);
-                });
-        }
-        getPorfile()
-
     }, [])
 
 
-    const editPorfile = async () => {
+    const getPorfile = async () => {
+
+        
+        await store.collection('artists').where('id', '==', idUser)
+            .get()
+            .then((querySnapshot) => {
+                console.log(querySnapshot)
+                querySnapshot.forEach((doc) => {
+                    console.log(doc.data().name)
+                    setName(doc.data().name)
+                    setDescription(doc.data().description)
+                    setLink(doc.data().link)
+                    
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
+    }
+
+    getPorfile();
+
+
+    const editPorfile = () => {
 
         setModeEdit(true)
 
@@ -69,12 +68,12 @@ const Porfile = () => {
             description: description,
             link: link
         })
-        .then(() => {
-            alert('update porfile')
-        })
-        .catch((e) => {
-            console.error('error ' + e)
-        })
+            .then(() => {
+                alert('update porfile')
+            })
+            .catch((e) => {
+                console.error('error ' + e)
+            })
 
         setModeEdit(false)
 
@@ -82,11 +81,11 @@ const Porfile = () => {
 
     return (
         <div className="w-full flex justify-center items-start mt-5">
-            <div className="w-3/5 flex justify-center items-center mb-3">
-                <div className="w-72">
+            <div className="w-3/5 flex justify-center items-center mb-3 md:flex-row xs:flex-col xs:mt-5">
+                <div className="md:w-52 xs:w-32">
                     <img src={photo} alt="user" className="mb-5 rounded" />
                 </div>
-                <div className="w-1/2 flex justify-center items-start flex-col ml-6">
+                <div className="md:w-1/2 xs:w-full flex justify-center md:items-start xs:items-center md:text-left xs:text-center flex-col md:ml-6 xs:ml-0">
                     <div className="flex items-center">
                         {
                             modeEdit ?
@@ -148,13 +147,13 @@ const Porfile = () => {
                     {
                         modeEdit ?
                             (
-                                <button onClick={setPorfile} className="p-1 mt-2 text-white bg-black rounded">Actualizar</button>
+                                <button onClick={setPorfile} className="p-1 mt-4 text-white bg-black rounded">Actualizar</button>
 
                             )
                             :
                             (
 
-                                <button onClick={editPorfile} className="p-1 mt-2 border border-black rounded">Editar perfil</button>
+                                <button onClick={editPorfile} className="p-1 mt-4 border border-black rounded">Editar perfil</button>
                             )
                     }
 

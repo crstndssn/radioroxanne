@@ -15,7 +15,7 @@ module.exports = {
     },
     colors: {
 
-      paper: '#F2F0E9',
+      paper: '#f7f7f2',
       orange: '#E1962A',
       nature: '#2B4A45',
       sky: '#455D84',
